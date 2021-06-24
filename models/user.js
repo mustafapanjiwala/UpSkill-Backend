@@ -16,9 +16,9 @@ const User = mongoose.model(
         number: {
             type: Number,
             required: true,
-            unique: true,
-            minlength: 10,
-            maxlength: 10
+            unique: true
+            // minlength: 10,
+            // maxlength: 11
         },
         residence: {
             type: String,
@@ -35,10 +35,10 @@ const User = mongoose.model(
 
 function ValidateUsers(user) {
     const schema = Joi.object({
-        id: Joi.number().required,
+        id: Joi.number().required(),
         name: Joi.string().min(5).max(50).required(),
         email: Joi.string().min(5).max(255).required().email(),
-        number: Joi.number().min(10).max(10).required(),
+        number: Joi.number().min(5).max(25).required(),
         residence: Joi.string().min(5).max(255).required()
     });
     return schema.validate(user);

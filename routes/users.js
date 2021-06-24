@@ -40,14 +40,14 @@ router.post('/', async (req, res) => {
     }
 
     let user = new User({
-        id: users.length + 1,
+        id: User.length + 1,
         name: req.body.name,
         email: req.body.email,
         number: req.body.number,
         residence: req.body.residence
     });
 
-    genre = await user.save();
+    user = await user.save();
     res.send(user);
 });
 
