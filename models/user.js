@@ -38,7 +38,7 @@ function ValidateUsers(user) {
         id: Joi.number().required(),
         name: Joi.string().min(5).max(50).required(),
         email: Joi.string().min(5).max(255).required().email(),
-        number: Joi.number().min(5).max(25).required(),
+        number: Joi.number().min(5).max(9999999999).required(),
         residence: Joi.string().min(5).max(255).required()
     });
     return schema.validate(user);
