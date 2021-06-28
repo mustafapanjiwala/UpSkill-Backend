@@ -1,11 +1,12 @@
 const Joi = require('joi');
 const mongoose = require('mongoose');
 const users = require('./routes/users');
+const courses = require('./routes/courses');
 const express = require('express');
 const app = express();
 
 mongoose
-    .connect('mongodb://localhost/users', {
+    .connect('mongodb://localhost/courses', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
@@ -14,7 +15,7 @@ mongoose
 
 app.use(express.json());
 app.use('/api/users', users);
-app.use('/api/courses', users);
+app.use('/api/courses', courses);
 
 const port = process.env.PORT || 9000;
 app.listen(port, () => console.log(`listening on port ${port}...`));
