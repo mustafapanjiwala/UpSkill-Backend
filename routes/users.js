@@ -40,7 +40,7 @@ router.post('/', async (req, res) => {
     }
 
     let user = new User({
-        id: User.length + 1,
+        id: req.body.id,
         name: req.body.name,
         email: req.body.email,
         number: req.body.number,
