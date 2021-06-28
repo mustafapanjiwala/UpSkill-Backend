@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
-const myCustomJoi = Joi.extend(require('joi-phone-number'));
+// const myCustomJoi = Joi.extend(require('joi-phone-number'));
 
 const User = mongoose.model(
     'User',
@@ -39,7 +39,7 @@ function ValidateUsers(user) {
         id: Joi.number().required(),
         name: Joi.string().min(5).max(50).required(),
         email: Joi.string().min(5).max(255).required().email(),
-        number: myCustomJoi.string().required().phoneNumber(),
+        number: Joi.string().required().min(5).max(9999999999),
         residence: Joi.string().min(5).max(255).required()
     });
     return schema.validate(user);
