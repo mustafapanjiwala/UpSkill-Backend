@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Joi = require('joi');
-// const myCustomJoi = Joi.extend(require('joi-phone-number'));
 
 const User = mongoose.model(
     'User',
