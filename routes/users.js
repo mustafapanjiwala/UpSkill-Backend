@@ -4,31 +4,17 @@ const express = require('express');
 const Joi = require('joi');
 const router = express.Router();
 
-mongoose
-    .connect('mongodb://localhost/users', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch((err) => console.error('Could not connect to MongoDB...', err));
+// mongoose
+//     .connect('mongodb://localhost/users', {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     })
+//     .then(() => console.log('Connected to MongoDB...'))
+//     .catch((err) => console.error('Could not connect to MongoDB...', err));
 
 router.get('/', async (req, res) => {
     const users = await User.find().sort('name');
     res.send(users);
-});
-
-router.get('/:id', async (req, res) => {
-    const user = await User.findById(
-        req.params.id,
-        { name: req.body.name },
-        {
-            new: true
-        }
-    );
-    if (!user) {
-        res.status(404).send('cannot find the desired genre');
-    }
-    res.send(user);
 });
 
 router.post('/', async (req, res) => {
@@ -87,6 +73,19 @@ router.delete('/:id', async (req, res) => {
         res.status(404), res.send('cannot find the desired genre');
     }
 
+    res.send(user);
+});
+router.get('/:id', async (req, res) => {
+    const user = await User.findById(
+        req.params.id,
+        { name: req.body.name },
+        {
+            new: true
+        }
+    );
+    if (!user) {
+        res.status(404).send('cannot find the desired genre');
+    }
     res.send(user);
 });
 

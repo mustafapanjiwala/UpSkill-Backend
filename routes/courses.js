@@ -4,23 +4,23 @@ const express = require('express');
 const Joi = require('joi');
 const router = express.Router();
 
-mongoose
-    .connect('mongodb://localhost/courses', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
-    .then(() => console.log('Connected to MongoDB...'))
-    .catch((err) => console.error('Could not connect to MongoDB...', err));
+// mongoose
+//     .connect('mongodb://localhost/courses', {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true
+//     })
+//     .then(() => console.log('Connected to MongoDB...'))
+//     .catch((err) => console.error('Could not connect to MongoDB...', err));
 
 router.get('/', async (req, res) => {
-    const courses = await Courses.find().sort('cname');
+    const courses = await Course.find().sort('cname');
     res.send(courses);
 });
 
 router.get('/:cid', async (req, res) => {
-    const course = await Courses.findById(
+    const course = await Course.findById(
         req.params.id,
-        { name: req.body.name },
+        { cname: req.body.name },
         {
             new: true
         }

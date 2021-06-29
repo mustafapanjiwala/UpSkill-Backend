@@ -1,0 +1,21 @@
+/**
+ * Paste one or more documents here
+ */
+{
+    "_id": {
+        "$oid": "60dac81e1aa2200322f0eb8d"
+    },
+    "cid": "1",
+    "cname": "coursera",
+    "author": "Mustafa",
+    "description": "Consectetur labore officia laborum dolore est aliqua laboris exercitation ipsum. Cillum irure consequat nisi nostrud in dolore laborum incididunt et duis officia non. Aliquip aute minim aute mollit ad in elit tempor laborum ea. Mollit incididunt qui voluptate proident laboris excepteur est laborum mollit.",
+    "price": "50",
+    "videos": [
+        {
+            "vid": "1",
+            "vititle": "hello world",
+            "vsubtitle": "Ullamco velit tempor minim dolore est pariatur cillum aliqua irure dolore aliquip labore voluptate eu. Lorem amet consequat voluptate exercitation exercitation consequat est aliqua laboris sint et. Anim tempor sit ut esse in tempor.",
+            "vdescription": "Magna commodo nulla dolor cupidatat quis officia pariatur consectetur nulla nisi. Proident aliqua veniam quis occaecat eiusmod Lorem ipsum tempor cupidatat cillum nisi labore ad. Sint dolore nostrud voluptate aliquip amet cupidatat sint voluptate et velit cillum do dolore magna. Est excepteur eiusmod exercitation minim aliqua adipisicing minim incididunt officia. Commodo nisi culpa velit dolore qui ad officia consequat anim labore amet excepteur."
+        }
+    ]
+}

@@ -6,7 +6,7 @@ const express = require('express');
 const app = express();
 
 mongoose
-    .connect('mongodb://localhost/courses', {
+    .connect('mongodb://localhost/upskill', {
         useNewUrlParser: true,
         useUnifiedTopology: true
     })
