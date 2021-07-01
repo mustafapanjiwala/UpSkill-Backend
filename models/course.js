@@ -17,9 +17,6 @@ const Course = mongoose.model(
         price: {
             type: Number,
             required: true,
-            unique: true,
-            minlength: 10,
-            maxlength: 11
         },
         videos: [
             {

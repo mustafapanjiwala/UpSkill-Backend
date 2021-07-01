@@ -1,4 +1,4 @@
-const { Course, ValidateCourse } = require('../models/course');
+const { Course, ValidateCourses } = require('../models/course');
 const mongoose = require('mongoose');
 const express = require('express');
 const Joi = require('joi');
@@ -12,15 +12,16 @@ const router = express.Router();
 //     .then(() => console.log('Connected to MongoDB...'))
 //     .catch((err) => console.error('Could not connect to MongoDB...', err));
 
+
 router.get('/', async (req, res) => {
     const courses = await Course.find().sort('cname');
     res.send(courses);
 });
 
 router.get('/:cid', async (req, res) => {
-    const course = await Course.findById(
-        req.params.id,
-        { cname: req.body.name },
+    const course = await Course.findByIdAndUpdate(
+        req.params.cid,
+        { cname: req.body.cname },
         {
             new: true
         }

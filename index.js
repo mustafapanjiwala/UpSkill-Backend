@@ -5,10 +5,12 @@ const courses = require('./routes/courses');
 const express = require('express');
 const app = express();
 
+
 mongoose
-    .connect('mongodb://localhost/upskill', {
+    .connect('mongodb+srv://sachinmotwani02:13sachin02@cluster0.p9cxr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
         useNewUrlParser: true,
-        useUnifiedTopology: true
+        useUnifiedTopology: true,
+        useCreateIndex:true
     })
     .then(() => console.log('Connected to MongoDB...'))
     .catch((err) => console.error('Could not connect to MongoDB...', err));

@@ -4,6 +4,7 @@ const express = require('express');
 const Joi = require('joi');
 const router = express.Router();
 
+
 // mongoose
 //     .connect('mongodb://localhost/users', {
 //         useNewUrlParser: true,
@@ -81,7 +82,8 @@ router.get('/:id', async (req, res) => {
         { name: req.body.name },
         {
             new: true
-        }
+        },
+        console.log(user)
     );
     if (!user) {
         res.status(404).send('cannot find the desired genre');
